@@ -1,0 +1,63 @@
+<div class="container" *ngFor="let post of posts">
+    <img [src]="post.image" alt="">
+    <div class="overlay">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description | slice:0:30}}</p>
+        <p><small>{{ post.category }}</small></p>
+    </div>
+</div>
+
+<div class="cont">
+	<form  >
+		<h3>Crea un nuevo post</h3>
+		<hr />
+		<label for="name"><b>Title</b></label>
+		<input
+            type="text"
+            placeholder="Introduzca el titulo del post"
+            name="name"
+            minlength="5"
+            class="form-control"
+            required
+          />
+        <label for="textarea1"><b>Description</b></label>
+        <textarea 
+            id="textarea1" 
+            class="materialize-textarea" 
+            required>
+        </textarea>
+        <label for="name"><b>Section</b></label>
+		<p>
+            <label>
+                <input class="with-gap" name="group1" type="radio"  required/>
+                <span>Travel </span>
+            </label>
+            <label>
+                <input class="with-gap" name="group1" type="radio"  required/>
+                <span>Lifestyle </span>
+            </label>
+            <label>
+                <input class="with-gap" name="group1" type="radio"  required/>
+                <span> Business </span>
+            </label>
+            <label>
+                <input class="with-gap" name="group1" type="radio"  required/>
+                <span> Food </span>
+            </label>
+            <label>
+                <input class="with-gap" name="group1" type="radio"  required/>
+                <span> Work </span>
+            </label>
+        </p>
+        <div class="file-field input-field">
+            <div class="btn">
+              <span>File</span>
+              <input type="file" required>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
+        <button type="submit" class="btn btn-primary" >Registrarse</button>
+	</form>
+</div>
